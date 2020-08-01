@@ -3,12 +3,17 @@ import * as ACTION_TYPES from '../Redux/Actions/actionTypes'
 import * as ACTIONS from "../Redux/Actions/actions"
 import { connect } from "react-redux"
 
+import Auth from "../utils/auth"
+
+
+const auth = new Auth()
 class Container extends Component {
 
     render(){
         const user_text = 'text 1'
         return(
             <div>
+                <button onClick={() => auth.login()} >Login</button> <br />
                <button onClick={() => console.log(this.props.stateprops1)}> Get State</button> <br />
                <button onClick={() => this.props.action1()}>Dispatch Action 1</button><br />
                <button onClick={() => this.props.action2()}>Dispatch action 2</button>
